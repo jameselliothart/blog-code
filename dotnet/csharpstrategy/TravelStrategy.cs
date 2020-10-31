@@ -2,17 +2,14 @@ namespace csharpstrategy
 {
     public class CarStrategy: ITravelStrategy
     {
-        public string GetTravelTime(string source, string destination) =>
-            "It takes 40 minutes to reach from " + source + " to " + destination + " using Car.";
+        public int GetTravelTime(string source, string destination) => 40;
     }
     public class BikeStrategy: ITravelStrategy
     {
-        public string GetTravelTime(string source, string destination) =>
-            "It takes 25 minutes to reach from " + source + " to " + destination + " using Bike.";
+        public int GetTravelTime(string source, string destination) => 25;
     }
     public class BusStrategy: ITravelStrategy
     {
-        public string GetTravelTime(string source, string destination) =>
-            "It takes 60 minutes to reach from " + source + " to " + destination + " using Bus.";
+        public int GetTravelTime(string source, string destination) => 60;
     }
 }

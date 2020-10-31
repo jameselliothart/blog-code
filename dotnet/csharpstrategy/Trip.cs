@@ -11,10 +11,10 @@ namespace csharpstrategy
             _strategy = chosenStrategy;
         }
 
-        public void GetTravelTime(string source, string destination)
+        public string GetTravelTime(string source, string destination)
         {
             var result = _strategy.GetTravelTime(source, destination);
-            Console.WriteLine(result);
+            return $"It takes {result} minutes to go from {source} to {destination}";
         }
     }
 }
