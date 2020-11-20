@@ -6,13 +6,17 @@ class Greeter():
 
     def get_greetings(self):
         path = Path.joinpath(self._path, 'greetings.txt')
-        return Path.read_text(path).split('\n')
+        return path.read_text().split('\n')
 
     @staticmethod
     def greet_planet(greetings):
         return [f'{greeting} mars!' for greeting in greetings]
 
     def run(self):
-        greetings = self.greet_planet(self.get_greetings())
+        greetings = self.get_greetings()
+        planet_greetings = self.greet_planet(greetings)
+        self.save_greetings(planet_greetings)
+
+    def save_greetings(self, greetings):
         path = Path.joinpath(self._path, 'planet_greetings.txt')
-        Path.write_text(path, '\n'.join(greetings))
+        path.write_text('\n'.join(greetings))
