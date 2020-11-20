@@ -1,2 +1,5 @@
 # ionide
 .ionide
+
+# python
+__pycache__
