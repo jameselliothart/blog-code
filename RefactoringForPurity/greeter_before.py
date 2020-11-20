@@ -6,9 +6,9 @@ class Greeter():
 
     def get_greetings(self):
         path = Path.joinpath(self._path, 'greetings.txt')
-        return Path.read_text(path).split('\n')
+        return path.read_text().split('\n')
 
     def run(self):
         greetings = [f'{greeting} earth!' for greeting in self.get_greetings()]
         path = Path.joinpath(self._path, 'planet_greetings.txt')
-        Path.write_text(path, '\n'.join(greetings))
+        path.write_text('\n'.join(greetings))
